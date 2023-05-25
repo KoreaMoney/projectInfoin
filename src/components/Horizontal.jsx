@@ -103,10 +103,10 @@ const Horizontal = () => {
   return (
     <div className="horizontal">
       <Carousel
+        sx={{ maxWidth: 1380, margin: "0 auto" }}
         withIndicators
         slidesToScroll={5}
         controlSize={32}
-        sx={{ maxWidth: 1380, margin: "0 auto" }}
         slideSize="252px"
         slideGap="30px"
         align="start"
@@ -118,7 +118,7 @@ const Horizontal = () => {
         styles={{
           indicator: {
             width: rem(40),
-            height: rem(5),
+            height: rem(10),
             zIndex: rem(1),
             transition: "width 250ms ease",
             "&[data-active]": {
@@ -132,17 +132,20 @@ const Horizontal = () => {
               opacity: 0,
               cursor: "default",
             },
-            background: "transparent",
             border: "none",
-            color: "white",
+            color: "black",
           },
         }}
       >
         {slides}
       </Carousel>
       <div className="horizBtnBox">
-        <button className="horizBtn" onClick={handlePrevSlide}>Prev</button>
-        <button className="horizBtn" onClick={handleNextSlide}>Next</button>
+        <button className="horizBtn" onClick={handlePrevSlide}>
+          Prev
+        </button>
+        <button className="horizBtn" onClick={handleNextSlide}>
+          Next
+        </button>
       </div>
     </div>
   );

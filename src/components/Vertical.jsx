@@ -30,10 +30,11 @@ const images = [
 ];
 
 const VerticalSlide = () => {
-  //[State관리]
+  //State
   const [slideCarousel, setSlideCarousel] = useState(null);
 
-  //[Slide이미지 정렬]
+  //carousel
+  /**여러가지 이미지를 map을 볼려 하나씩 순차적으로 슬라이드 진행 */
   const slides = images?.map((url) => (
     <Carousel.Slide key={url}>
       <div style={{ pointerEvents: "none" }}>
@@ -42,7 +43,8 @@ const VerticalSlide = () => {
     </Carousel.Slide>
   ));
 
-  //[ResizeObserver 실행을 제어하기 위한 useEffect 추가]
+  //ResizeObserver
+  /**resize오류로 인해 해당 사이즈 크기에 대한 오류를 방지하고자 코드 진행 */
   useEffect(() => {
     const handleResize = () => {
       if (slideCarousel) {
@@ -55,7 +57,10 @@ const VerticalSlide = () => {
     };
   }, [slideCarousel]);
 
-  //[Button관리]
+  /**이전과 다음 버튼을 생성
+   * useCallback : 함수 재 사용을 위함
+   * 컴포넌트가 다시 랜더링되더라도 함수의 참조값은 동일하게 유지 시킬 수 있다
+   */
   const handlePrevSlide = useCallback(() => {
     if (slideCarousel) {
       slideCarousel.scrollPrev();
@@ -68,7 +73,7 @@ const VerticalSlide = () => {
     }
   }, [slideCarousel]);
 
-  //[Wheel]
+  //마우스 휠 동작 함수
   const handleWheel = useCallback(
     (event) => {
       if (event.deltaY < 0) {
@@ -88,7 +93,7 @@ const VerticalSlide = () => {
     };
   }, [handleWheel]);
 
-  // 방향키 이벤트 처리
+  //이벤트 함수 : 방향키(소문자, 대문자도 대응할 수 있게 진행)
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowUp" || event.key === "w" || event.key === "W") {
@@ -111,43 +116,42 @@ const VerticalSlide = () => {
   return (
     <div className="vertical">
       <div className="verticalDiv">
-          <Carousel
-            orientation="vertical"
-            draggable
-            sx={{ margin: "0 auto", maxWidth: 170 }}
-            withIndicators
-            slidesToScroll={5}
-            slideSize={130}
-            getEmblaApi={setSlideCarousel}
-            align="start"
-            slideGap={30}
-            styles={{
-              indicator: {
-                width: rem(6),
-                height: rem(20),
-                zIndex: rem(1),
-                transition: "height 250ms ease",
-                "&[data-active]": {
-                  width: rem(6),
-                  height: rem(30),
-                },
-                backgroundColor: "white",
+        {/* 캐러셀 라이브러리 */}
+        <Carousel
+          sx={{ margin: "0 auto", maxWidth: 170 }} //sx는 mantine만의 스타일 구성 요소 루트
+          orientation="vertical" //캐러셀의 방향성 제공
+          draggable //드래그 기능 true
+          withIndicators //하단 버튼 막대기 생성
+          slidesToScroll={5} //몇개의 스크롤 진행
+          slideSize={130} // 가로의 슬라이드 크기
+          getEmblaApi={setSlideCarousel} //Embla : mantine의 캐러셀 기능을 뜻함
+          align="start" //캐러셀 시작 시점
+          slideGap={30} //이미지간 간격
+          height={800}
+          styles={{
+            indicator: {
+              width: rem(10),
+              height: rem(40),
+              zIndex: rem(1),
+              transition: "height 250ms ease",
+              "&[data-active]": {
+                height: rem(50),
               },
-              control: {
-                "&[data-inactive]": {
-                  opacity: 0,
-                  cursor: "default",
-                },
-                background: "transparent",
-                color: "white",
-                border: "none",
-                width: "32px",
-                height: "32px",
+              backgroundColor: "white",
+            },
+            control: {
+              "&[data-inactive]": {
+                opacity: 0,
+                cursor: "default",
               },
-            }}
-          >
-            {slides}
-          </Carousel>
+              color: "black",
+              border: "none",
+            },
+          }}
+        >
+          {slides}
+        </Carousel>
+        {/* 버튼  */}
         <div className="vertiBtnBox">
           <button className="vertiBtn" onClick={handlePrevSlide}>
             Up
