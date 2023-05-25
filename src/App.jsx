@@ -16,8 +16,8 @@ const App = () => {
   };
   return (
     <div>
-      <div>
-        <button onClick={handleToggleCarousel}>
+      <div className="mainSwitchBox">
+        <button onClick={handleToggleCarousel} className="mainSwitchBtn">
           {carouselType === "verticalSlide" ? "Horizontal" : "Vertical"}
         </button>
       </div>

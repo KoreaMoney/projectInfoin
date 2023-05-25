@@ -1,0 +1,46 @@
+.vertical .verticalDiv {
+  max-height: 770px;
+  overflow: hidden;
+}
+
+.vertical .verticalDiv .button {
+  margin-top: 80px !important;
+}
+.vertical .mantine-iprvg2 {
+  height: 73%;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vertical .mantine-6ym9d2.mantine-Carousel-indicators {
+  height: 150px;
+  left: 200px;
+  top: 270px;
+}
+
+.vertical .mantine-1agetca.mantine-Carousel-controls {
+  height: 894px;
+  bottom: 664px;
+  z-index: 1;
+  top: unset;
+}
+.vertical .mantine-Carousel-root {
+  position: relative;
+}
+
+.vertiBtnBox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  gap: 200px;
+}
+.vertiBtn {
+  width: 100px;
+  height: 30px;
+}
+.vertical .mantine-Carousel-root.mantine-fxw6tf {
+}

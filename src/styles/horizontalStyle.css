@@ -1,0 +1,42 @@
+.horizontal .horizontalSlide {
+  position: relative;
+}
+.horizontal .mantine-Carousel-root {
+  position: static;
+}
+.horizontal .mantine-1p3no9p.mantine-Image-image {
+  object-fit: unset !important;
+  height: 390px !important;
+}
+.horizontal .mantine-19swgkw.mantine-Carousel-indicators {
+  position: relative;
+  top: 20px;
+  height: 80px;
+}
+.horizBtnBox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  gap: 200px;
+}
+
+.horizontal .mantine-7assjv.mantine-Carousel-controls {
+  width: 1472px;
+  z-index: 1;
+  top: -300px;
+  right: 59px;
+  left: unset;
+  position: relative;
+}
+
+.horizBtn {
+  width: 100px;
+  height: 30px;
+}
+
+.horizontal
+  .mantine-UnstyledButton-root.mantine-Carousel-control.mantine-e18zos {
+  background-color: black;
+}
