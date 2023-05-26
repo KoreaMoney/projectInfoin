@@ -16,7 +16,7 @@
 }
 
 .vertical .mantine-1agetca.mantine-Carousel-controls {
-  height: 860px;
+  height: 870px;
   bottom: -23px;
   z-index: 1;
   top: unset;
@@ -35,13 +35,15 @@
 }
 .vertiBtn {
   width: 70px;
-  height: 50px;
+  height: 40px;
   font-size: 20px;
-  background-color: tomato;
-  color: azure;
+  background-color: #b8b8b8;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  color: #3b3939;
   cursor: pointer;
 }
 .vertiBtn:hover {
-  background-color: antiquewhite;
-  color: black;
+  background-color: #6b6b6a;
+  color: #ffffff;
 }

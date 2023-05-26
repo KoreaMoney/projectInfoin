@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "../styles/verticalStyle.css";
-
+// 라이브러리
 import { Carousel } from "@mantine/carousel";
 import { rem } from "@mantine/core";
 import { Image } from "@mantine/core";
-
+//이미지
 import pic01 from "../assets/pic01.webp";
 import pic02 from "../assets/pic02.webp";
 import pic03 from "../assets/pic03.webp";
@@ -15,7 +15,7 @@ import pic07 from "../assets/pic07.webp";
 import pic08 from "../assets/pic08.webp";
 import pic09 from "../assets/pic09.webp";
 import pic10 from "../assets/pic10.webp";
-
+//이미지 배열
 const images = [
   pic01,
   pic02,
@@ -32,7 +32,6 @@ const images = [
 const VerticalSlide = () => {
   //State
   const [slideCarousel, setSlideCarousel] = useState(null);
-
   //carousel
   /**여러가지 이미지를 map을 볼려 하나씩 순차적으로 슬라이드 진행 */
   const slides = images?.map((url) => (
@@ -106,7 +105,6 @@ const VerticalSlide = () => {
         handleNextSlide();
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
@@ -125,7 +123,7 @@ const VerticalSlide = () => {
           slidesToScroll={5} //몇개의 스크롤 진행
           slideSize={130} // 가로의 슬라이드 크기
           getEmblaApi={setSlideCarousel} //Embla : mantine의 캐러셀 기능을 뜻함
-          align="start" //캐러셀 시작 시점
+          align="center" //캐러셀 시작 시점
           slideGap={30} //이미지간 간격
           height={800}
           styles={{

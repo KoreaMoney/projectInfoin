@@ -109,7 +109,7 @@ const Horizontal = () => {
         controlSize={32}
         slideSize="252px"
         slideGap="30px"
-        align="start"
+        align="center"
         getEmblaApi={setSlideCarousel}
         breakpoints={[
           { maxWidth: "md", slideSize: "50%" },
